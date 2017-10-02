@@ -50,23 +50,23 @@ The model.py file contains the code for training and saving the convolution neur
 
 #### 1. An appropriate model architecture has been employed
 
-My model consists of a convolution neural network with a combination of 5x5 and 3x3 filter sizes and depths between 24 and 64 (model.py lines 18-24) 
+My model consists of a convolution neural network with a combination of 5x5 and 3x3 filter sizes and depths between 24 and 64 (model.py lines 64-78) 
 
-The model includes RELU and Elu layers to introduce nonlinearity (code line 20).
+The model includes RELU and Elu layers to introduce nonlinearity.
 
-The data is normalized in the model using a Keras lambda layer (code line 18), and the data is preprocessed(Cropped) in the model using a Keras Cropping layer (code line 18). 
+The data is normalized in the model using a Keras lambda layer (code line 65), and the data is preprocessed(Cropped) in the model using a Keras Cropping layer (code line 66). 
 
 #### 2. Attempts to reduce overfitting in the model
 
 The model contains L2 regularization across all convolution and fully connected layers in order to reduce overfitting. 
 
-The model was trained and validated using the data of both tracks to ensure that the model was not overfitting (code line 10-16). The model was tested by running it through the simulator on both tracks and ensuring that the vehicle could stay on the track over multiple laps.
+The model was trained and validated using the data of both tracks to ensure that the model was not overfitting (code line 83-88). The model was tested by running it through the simulator on both tracks and ensuring that the vehicle could stay on the track over multiple laps.
 
 Haven't tried dropout layers. Will do it as a follow up.
 
 #### 3. Model parameter tuning
 
-The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 25).
+The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 113).
 
 #### 4. Appropriate training data
 
@@ -78,9 +78,9 @@ For details about how I created the training data, see the next section.
 
 #### 1. Solution Design Approach
 
-The overall strategy for deriving a model architecture was to ...
+The overall strategy for deriving a model architecture was to make sure it is overfitted first and then attempt to generalize it.
 
-My step was to start with the Lenet convolution neural network. I added normailization layer to it using keras lambda. 
+My first step was to start with the Lenet convolution neural network. I added normailization layer to it using keras lambda. 
 In order to gauge how well the model was working, I split my image and steering angle data into a training and validation set. 
 I trained with only center images of Track 1 data and ran the simulator to see how well the car was driving around. Unfortunately it was going off track in the turn after the bridge.
 I then added flip augmentation but it didnt help.
@@ -100,7 +100,7 @@ Now with the combined data of both the tracks, flip augmentation, normalization 
 
 #### 2. Final Model Architecture
 
-The final model architecture (model.py lines 18-24) consisted of a convolution neural network with the following layers and layer sizes.
+The final model architecture (model.py lines 63-79) consisted of a convolution neural network with the following layers and layer sizes.
 
 ![alt text][image1]
 
@@ -119,9 +119,10 @@ I finally randomly shuffled the data set and put 20% of the data into a validati
 
 I used this training data for training the model. The validation set helped determine if the model was over or under fitting. 
 I chose 10 as the ideal number of epochs. 
+
 ![alt text][image2]
 
-Next Steps: 
+#### 4. Next Steps
 * Explore filtering 0 angle records.
-* Dropout Layer
-* Batch normailization  
+* Try Dropout Layers
+* Try Batch normailization  
