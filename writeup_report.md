@@ -18,7 +18,7 @@ The goals / steps of this project are the following:
 [image2]: ./examples/graph.png "MSE Loss"
 [image3]: ./examples/multicamera.png "Track 1 Driving"
 [image4]: ./examples/multicamera2.png "Right Lane Driving"
-[image5]: ./examples/multicameraC2.png "Center Lane Driving"
+[image5]: ./examples/multicamera2C.png "Center Lane Driving"
 [image6]: ./examples/flippedImages.png "Flipped Image"
 
 ## Rubric Points
