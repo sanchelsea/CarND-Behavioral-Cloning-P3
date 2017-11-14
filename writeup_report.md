@@ -16,6 +16,10 @@ The goals / steps of this project are the following:
 
 [image1]: ./examples/ModelBC.png "Model Visualization"
 [image2]: ./examples/graph.png "MSE Loss"
+[image3]: ./examples/multicamera.png "Track 1 Driving"
+[image4]: ./examples/multicamera2.png "Right Lane Driving"
+[image5]: ./examples/multicameraC2.png "Center Lane Driving"
+[image6]: ./examples/flippedImages.png "Flipped Image"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
@@ -107,11 +111,27 @@ The final model architecture (model.py lines 63-79) consisted of a convolution n
 #### 3. Creation of the Training Set & Training Process
 
 For Track 1 I used the sample data set provided. 
+All three cameras were used with a correction of 0.3. 
+Below image shows an example from Track 1:
+
+![alt text][image3]
 
 For Track 2, I first recorded a lap by driving on the right lane. 
+Below image shows Track 2 driving on the right lane alone.
+
+![alt text][image4]
+
 Then I created another recording by driving in the center lane. 
+Below image shows Track 2 driving in the center of the lane.
+
+![alt text][image5]
+
 I also recorded some recovery driving learn to move from right or left side to the center at multiple spots along the track.
 To augment the data sat, I also flipped images and angles to generalize it and reduce overfitting.
+Below is an example of flipped image which I use to augment the database. Using flipped images helps generalize the model.
+
+![alt text][image6]
+
 
 My data set size after augmentation was 50368. 
 
